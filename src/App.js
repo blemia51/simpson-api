@@ -10,7 +10,7 @@ function App() {
     <div id="pokemon">
      
     </div>
-    <button onClick={textJSON()} >Another</button>
+    <button onClick={textJSON} >Another</button>
     </div>
   )}
   
@@ -33,7 +33,7 @@ function fetchPokemonJSON() {
         <p id='text'>${pokemon[0].quote}</p>
       `;
       
-      
+      document.querySelector('#pokemon').innerHTML = pokemonHtml    
   })
 }
   
@@ -49,11 +49,10 @@ function textJSON() {
       console.log('data decoded from JSON:', pokemon);
 
     
-    const pokemonHtml = `
-      
+    const pokemonHtml = ` 
       ${pokemon[0].quote}
     `;
-   
+    document.querySelector('#text').innerHTML = pokemonHtml;
   })
 }
 
